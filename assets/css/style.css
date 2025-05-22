@@ -59,6 +59,8 @@ table {
 
 body {
     background: var(--color-background);
+    display: grid;
+    place-content: center;
 }
 
 .site {
@@ -73,10 +75,8 @@ body {
 
 /* Menu */
 .menu {
-
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     padding: 0;
     border-radius: 25px;
     background-color: white;
