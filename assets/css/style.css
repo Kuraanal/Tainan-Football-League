@@ -78,7 +78,6 @@ h3 {
 .site {
     max-width: 1080px;
     margin: 0 auto;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -93,7 +92,7 @@ h3 {
     padding: 0 2.5rem;
     border-radius: 25px;
     background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.35);
 }
 
 .menu__content {
@@ -196,5 +195,10 @@ h3 {
 
 .menu__content-competitions img {
     width: 85px;
+    height: auto;
+}
+
+.club__logo {
+    width: 50px;
     height: auto;
 }
