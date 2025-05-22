@@ -86,7 +86,7 @@ h3 {
 
 /* Menu */
 .menu {
-    max-width: 800px;
+    width: 800px;
     display: flex;
     flex-direction: column;
     padding: 0 2.5rem;
@@ -105,8 +105,11 @@ h3 {
     transition: max-height 0.3s ease-in-out;
 }
 
-.menu__content div {
+.menu__content>div {
     padding: 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .menu:has([type="checkbox"]:checked) .menu__content {
@@ -185,12 +188,15 @@ h3 {
 }
 
 .menu__content-competitions {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: flex-start;
-    padding: 20px 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.menu__content-competitions a{
+    display: grid;
+    place-content: center;
 }
 
 .menu__content-competitions img {
@@ -201,4 +207,15 @@ h3 {
 .club__logo {
     width: 50px;
     height: auto;
+}
+
+
+@media (max-width: 460px) {
+    .menu {
+        width: auto;
+        padding: 0 1rem;
+    }
+    .menu__content-competitions {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
