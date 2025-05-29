@@ -62,7 +62,9 @@ table {
     font-variation-settings:
         "HEXP" 0;
     height: 100dvh;
-    width: 100dvw;
+    /* width: 100dvw; */
+
+    color: white;
 
     --color-accent-d1: #EACA49;
 }
@@ -73,6 +75,7 @@ body {
     background: var(--color-background);
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 h1,
@@ -86,20 +89,28 @@ h1{
     font-size: 4rem;
 }
 
+h2{
+    font-size: 2rem;
+}
+
 .site {
     min-width: 375px;
     max-width: 1080px;
+    width: 100%;
     
-    margin: 8rem auto 0 auto;
+    margin-top: 8rem;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    align-items: center;
+    /* justify-content: flex-start; */
 }
 
 /* Menu */
 .menu {
     position: fixed;
+    min-width: 200px;
     max-width: 720px;
+    width: 100%;
     
     display: flex;
     flex-direction: column;
@@ -148,9 +159,8 @@ h1{
 .menu__section-clubs {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: space-around;
-    gap: 2rem;
+    gap: 1.25rem;
 }
 
 .menu__link {
@@ -186,7 +196,7 @@ h1{
 }
 
 .menu__top-logo {
-    height: 100%;
+    height: 50px;
     width: auto;
     max-width: none;
 }
@@ -200,7 +210,7 @@ h1{
     height: 32px;
 }
 
-.menu__top-burger label div {
+.menu__burger-line {
     width: 80%;
     height: 3px;
     border-radius: 2px;
@@ -236,7 +246,7 @@ h1{
     transform: translateY(-8px) rotate(-45deg);
 }
 
-.menu:has([type="checkbox"]:checked) .menu__top-burger div {
+.menu:has([type="checkbox"]:checked) .menu__burger-line {
     opacity: 0;
 }
 
@@ -263,6 +273,10 @@ h1{
     height: auto;
 }
 
+.club__logo:hover{
+    transform: scale(1.1);
+}
+
 .section {
     display: flex;
     flex-direction: column;
@@ -270,9 +284,71 @@ h1{
     width: 100%;
 }
 
+.section__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.section__row{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.12);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.section__row:has([type="checkbox"]:checked) .row__details {
+    max-height: 700px;
+}
+
+.row__score {
+    display: grid;
+    grid-template-columns: 1fr 50px 100px 50px 1fr;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1.25rem;
+    width: 100%;
+}
+
+.row__score span:first-child {
+    text-align: right;
+}
+
+.row__score span:nth-child(3){
+    text-align: center;
+}
+
+.details-toggle {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.12);
+}
+
+.details-toggle label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.details-toggle input[type="checkbox"] {
+    display: none;
+}
+
+.row__details{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
 @media (width <= 460px) {
     .menu{
-        inset: auto 0.25rem auto 0.25rem;
+        width: auto;
     }
 
     .menu__content-competitions {
