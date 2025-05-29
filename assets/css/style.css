@@ -282,6 +282,7 @@ h2{
     flex-direction: column;
     gap: 1rem;
     width: 100%;
+    padding: 0.25rem 0;
 }
 
 .section__content {
@@ -296,6 +297,8 @@ h2{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    min-width: 290px;
+    max-width: 1000px;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.12);
     border-radius: 1rem;
@@ -308,7 +311,7 @@ h2{
 
 .row__score {
     display: grid;
-    grid-template-columns: 1fr 50px 100px 50px 1fr;
+    grid-template-columns: 1fr 50px 70px 50px 1fr;
     justify-content: space-around;
     align-items: center;
     gap: 1.25rem;
@@ -347,7 +350,15 @@ h2{
 }
 
 @media (width <= 460px) {
+    :root{
+        font-size: 12px;    
+    }
+
     .menu{
+        width: auto;
+    }
+
+    .section{
         width: auto;
     }
 
