@@ -1,14 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap');
 
 /* CSS Reset */
+
 *, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+  box-sizing: border-box;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -22,40 +17,52 @@ fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
-main, menu, nav, output, ruby, section, summary,
+menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
-
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
-footer, header, hgroup, main, menu, nav, section {
-    display: block;
+footer, header, hgroup, menu, nav, section {
+	display: block;
 }
-
 body {
-    line-height: 1;
+	line-height: 1;
 }
-
-ul {
-    list-style: none;
+ol, ul {
+	list-style: none;
 }
-
 blockquote, q {
-    quotes: none;
+	quotes: none;
 }
-
 blockquote:before, blockquote:after,
 q:before, q:after {
-    content: '';
-    content: none;
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 
 /* root */
@@ -74,8 +81,6 @@ table {
     font-style: normal;
     font-variation-settings: "HEXP" 0;
     color: white;
-
-
 }
 
 /* Utility classes */
