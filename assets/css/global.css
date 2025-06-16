@@ -75,7 +75,7 @@ table {
     font-variation-settings: "HEXP" 0;
     color: white;
 
-    
+
 }
 
 /* Utility classes */
@@ -209,8 +209,9 @@ ol{
 
 .menu__section-clubs {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     gap: 1.25rem;
 }
 
@@ -305,7 +306,7 @@ ol{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     gap: 0.75rem;
 }
 
@@ -314,11 +315,11 @@ ol{
     flex-direction: row;
     justify-content: center;
     gap: 0.25rem;
-    width: 6.5rem;
-    height: 2.5rem;
+    width: 5.75rem;
+    /* height: 2.5rem; */
     color: #000;
     font-size: 1.25rem;
-    font-weight: 500;
+    /* font-weight: 500; */
     text-decoration: none;
     border-radius: 20px;
     padding: 0.5rem 0;
@@ -376,7 +377,7 @@ ol{
 .section__content {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
+    align-items: center;
     gap: 1rem;
 }
 
@@ -389,12 +390,14 @@ ol{
     max-width: 1000px;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.12);
+    border: 2px solid rgba(255, 255, 255, 0.01);
     border-radius: 1rem;
     overflow: hidden;
 }
 
-.section__row:has([type="checkbox"]:checked) .row__details {
-    max-height: 700px;
+.section__subtitle {
+    font-weight: 600;
+
 }
 
 .row__score {
@@ -404,6 +407,7 @@ ol{
     align-items: center;
     gap: 1.25rem;
     width: 100%;
+    padding: 0.25rem 0;
 }
 
 .row__score span:first-child {
@@ -421,14 +425,15 @@ ol{
 
 .details-toggle {
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.12);
+    /* background-color: rgba(0, 0, 0, 0.1); */
+    background-color: var(--color-background);
 }
 
 .details-toggle label {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0.5rem 1rem;
+    padding: 0.25rem 1rem;
     cursor: pointer;
 }
 
@@ -436,10 +441,43 @@ ol{
     display: none;
 }
 
+.section__row:has([type="checkbox"]:checked) .row__details {
+    max-height: 700px;
+    padding: 1.5rem 0 0.5rem 0;
+}
+
+.section__row:has([type="checkbox"]:checked) .details-toggle{
+    border-top: 2px solid rgba(255, 255, 255, 0.12);
+}
+
+.section__row:has([type="checkbox"]:checked) .details-toggle img{
+    /* transform: rotate(180deg); */
+    transform: scaleY(-1);
+}
+
+.row__score-details img{
+    width: 16px;
+    height: auto;
+    transition: transform 0.5s ease-in-out;
+}
+
 .row__details{
+    width: 100%;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    /* background-color: rgba(0, 0, 0, 0.12); */
+    background-color: var(--color-background);
+}
+
+.row__details p {
+    text-align: center;
+    line-height: 1.5rem;
 }
 
 .partner__logo{
@@ -451,6 +489,35 @@ article img {
     max-width: 100%;
     height: auto;
     align-self: center;
+}
+
+.club__jersey {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.125rem;
+}
+
+.club__jersey img{
+    width: 50px;
+    height: auto;
+}
+
+.row__map {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    border: 2px solid rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0);
+    color: #fff;
+    font-weight: 700;
+    transition: background-color 0.3s ease-in-out,
+    color 0.3s ease-in-out;
+}
+
+.row__map:hover,
+.row__map:focus-visible {
+    background-color: rgba(255, 255, 255, 1);
+    color: var(--color-background);
 }
 
 @media (width <= 460px) {
@@ -467,7 +534,7 @@ article img {
     }
 
     .menu{
-        max-width: 300px;
+        max-width: 360px;
     }
 
     .section{
