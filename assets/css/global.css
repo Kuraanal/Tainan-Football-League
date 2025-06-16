@@ -1,6 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap');
 
 /* CSS Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -14,9 +24,6 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 main, menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
@@ -66,10 +73,9 @@ table {
     font-weight: 400;
     font-style: normal;
     font-variation-settings: "HEXP" 0;
-    height: 100dvh;
-    width: 100dvw;
     color: white;
 
+    
 }
 
 /* Utility classes */
@@ -110,8 +116,8 @@ body {
     background: var(--color-background);
     display: flex;
     flex-direction: column;
+    /* justify-content: flex-start; */
     align-items: center;
-    width: 100dvw;
 }
 
 h1,
@@ -309,7 +315,7 @@ ol{
     justify-content: center;
     gap: 0.25rem;
     width: 6.5rem;
-    height: 1.5rem;
+    height: 2.5rem;
     color: #000;
     font-size: 1.25rem;
     font-weight: 500;
