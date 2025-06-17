@@ -542,10 +542,6 @@ article img {
         max-width: 360px;
     }
 
-    .section{
-        width: auto;
-    }
-
     .menu__section-content {
         flex-direction: column;
         align-items: center;
